@@ -6,18 +6,13 @@
 # Port to UserBot by @MoveAngel
 
 from covid import Covid
-
-from userbot import CMD_HELP
-from userbot.events import register
-
-
-@register(outgoing=True, pattern="^.covid (.*)")
+register(outgoing=True, pattern="^.covid (.*)")
 async def corona(event):
     await event.edit("`Processing...`")
-    country = event.pattern_match.group(1)
+ntry = event.pattern_match.group(1)
     covid = Covid(source="worldometers")
     try:
-        country_data = covid.get_status_by_country_name(country)
+status_by_country_name(country)
         output_text = (
             f"`Confirmed   : {country_data['confirmed']}`\n"
             + f"`Active      : {country_data['active']}`\n"
@@ -39,6 +34,6 @@ async def corona(event):
 CMD_HELP.update(
     {
         "covid": ".covid <country>"
-        "\nUsage: Get an information about data covid-19 in your country.\n"
-    }
-)
+information about data covid-19 in your country.\n"
+
+
